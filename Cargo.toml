@@ -1,0 +1,10 @@
+[package]
+name = "weather_app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+yew = { features = ["csr"], version = "0.21.0" }
+yew-router = { version = "0.18.0" }
+yew-hooks = {version = "0.3.3"}
+gloo = { version = "0.11.0", features = ["console"] }
