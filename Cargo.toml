@@ -3,9 +3,6 @@ name = "weather_app"
 version = "0.1.0"
 edition = "2024"
 
-[dev-dependencies]
-rusty-hook = "^0.11.2"
-
 [dependencies]
 yew = { features = ["csr"], version = "0.21.0" }
 yew-router = { version = "0.18.0" }
