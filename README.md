@@ -4,4 +4,4 @@ try with 100% rust without javascript
 
 ### task list
 
--   base setup
+-   [x] base setup
