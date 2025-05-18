@@ -13,4 +13,4 @@ _try with without javascript_
 ### base setup
 
 -   trying with commit hooks and its checks
-    -   implementing rusty-hooks []
+    -   implementing rusty-hooks [ ]
