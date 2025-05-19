@@ -1,12 +1,15 @@
 use crate::pages::index_page;
 use yew::prelude::*;
+use yew_bootstrap::util::{include_cdn, include_cdn_js};
 use yew_router::{prelude::*, switch};
 
 #[function_component]
 pub fn App() -> Html {
     html! {
          <BrowserRouter>
+         {include_cdn()}
             <Switch<Route> render={switch} /> // router configurations <BrowserRouter>
+         {include_cdn_js()}
         </BrowserRouter>
     }
 }
