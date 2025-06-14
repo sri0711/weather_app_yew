@@ -1,15 +1,17 @@
 use yew::prelude::*;
-use yew_bootstrap::component::{BrandType, NavBar, NavDropdownItem, NavItem};
+use yew_bootstrap::component::{BrandType, Button, NavBar};
 
 #[function_component]
 pub fn Header() -> Html {
     let brand = BrandType::BrandSimple {
-        text: AttrValue::from("Yew Bootstrap"),
+        text: AttrValue::from("Weather App"),
         url: Some(AttrValue::from("/")),
     };
     html! {
-        <NavBar nav_id={"test-nav"} class="navbar-expand-lg navbar-dark bg-dark" brand={brand}>
-            <NavItem text="Home" url={AttrValue::from("/")} />
+        <NavBar class="navbar-expand-lg navbar-dark bg-dark w-100" brand={brand}>
+            <div class="w-100 d-flex ms-auto">
+                    <Button class="btn-outline-dark">{"Search"}</Button>
+            </div>
         </NavBar>
     }
 }

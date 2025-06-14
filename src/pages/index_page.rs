@@ -1,14 +1,21 @@
+use std::str::FromStr;
+
 use crate::components::header;
+use gloo::console::log;
+use serde_json::from_str;
+use stylist::{ast::Sheet, yew::styled_component, Style};
 use yew::prelude::*;
 use yew_hooks::prelude::*;
-
 struct LocationObject {
     lat: f64,
     long: f64,
 }
 
-#[function_component]
+#[styled_component]
 pub fn IndexPage() -> Html {
+    let css = include_str!("./index.css");
+    let sheet = Sheet::from_str(css).unwrap();
+    let style = Style::new(sheet).unwrap();
     let options = UseGeolocationOptions::new();
     options.set_enable_high_accuracy(true);
     let get_location = use_geolocation_with_options(options);
@@ -22,10 +29,11 @@ pub fn IndexPage() -> Html {
     };
 
     html! {
-        <>
+        <div>
+        <div class="root">
             <header::Header/>
             <h1>{ "Welcome to the Weather App!" }</h1>
-            <h1>{get_location.loading}</h1>
+            <h2>{get_location.loading}</h2>
             {
                 if let Some(location) = location_data {
                     html! {
@@ -41,6 +49,7 @@ pub fn IndexPage() -> Html {
                 }
             }
             <p>{ "This is the home page." }</p>
-        </>
+        </div>
+    </div>
     }
 }
