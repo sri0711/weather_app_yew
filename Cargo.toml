@@ -20,3 +20,4 @@ web-sys = { version = "0.3.*", features = [
 stylist = { version = "0.13.0", features = ["yew"] }
 serde = { version = "1.0.219" }
 serde_json = { version = "1.0.140" }
+reqwest = { version = "0.12.20" }

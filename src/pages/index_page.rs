@@ -1,6 +1,6 @@
 use std::str::FromStr;
 
-use crate::components::header;
+use crate::{components::header, pages::weather_page::WeatherPage};
 use gloo::console::log;
 use serde_json::from_str;
 use stylist::{ast::Sheet, yew::styled_component, Style};
@@ -28,18 +28,18 @@ pub fn IndexPage() -> Html {
         None
     };
 
+    // get place from header
+    let location_input = Callback::from(|message| log!("from index page {}", message));
+
     html! {
-        <div>
+        <div class={style}>
         <div class="root">
-            <header::Header/>
-            <h1>{ "Welcome to the Weather App!" }</h1>
-            <h2>{get_location.loading}</h2>
+            <header::Header place={location_input}/>
             {
                 if let Some(location) = location_data {
                     html! {
                         <>
-                            <h1>{location.lat}</h1>
-                            <h1>{location.long}</h1>
+                            <WeatherPage/>
                         </>
                     }
                 } else {
@@ -48,7 +48,6 @@ pub fn IndexPage() -> Html {
                     }
                 }
             }
-            <p>{ "This is the home page." }</p>
         </div>
     </div>
     }

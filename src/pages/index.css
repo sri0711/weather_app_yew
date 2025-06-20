@@ -4,3 +4,7 @@
 	color: white;
 	background: black;
 }
+
+.root .navbar-nav {
+	width: 100% !important;
+}
