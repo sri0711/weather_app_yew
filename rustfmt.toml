@@ -1,0 +1,5 @@
+# rustfmt.toml
+wrap_comments = true
+normalize_doc_attributes = true
+format_macro_bodies = true
+format_macro_matchers = true

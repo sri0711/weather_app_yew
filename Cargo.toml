@@ -12,3 +12,13 @@ yew-router = { version = "0.18.0" }
 yew-hooks = { version = "0.3.3" }
 gloo = { version = "0.11.0", features = ["console"] }
 yew-bootstrap = { version = "0.13.0" }
+wasm-bindgen = { version = "0.2.100" }
+wasm-bindgen-futures = { version = "0.4.50" }
+web-sys = { version = "0.3.77", features = [
+    "HtmlTextAreaElement",
+    "HtmlSelectElement",
+] }
+stylist = { version = "0.13.0", features = ["yew"] }
+serde = { version = "1.0.219" }
+serde_json = { version = "1.0.140" }
+reqwest = { version = "0.12.20" }
