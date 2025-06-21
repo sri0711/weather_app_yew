@@ -2,7 +2,8 @@ use crate::{components::header, helpers::locations, pages::weather_page::Weather
 use gloo::console::log;
 use serde_json::from_str;
 use std::str::FromStr;
-use stylist::{Style, ast::Sheet, yew::styled_component};
+use stylist::Style;
+use stylist::{ast::Sheet, yew::styled_component};
 use yew::prelude::*;
 use yew_hooks::prelude::*;
 struct LocationObject {
@@ -56,7 +57,7 @@ pub fn IndexPage() -> Html {
                 if let Some(location) = location_data {
                     html! {
                         <>
-                            <WeatherPage lat={""} long = {""}/>
+                            <WeatherPage lat={ if *lat == "" { get_location.latitude.to_string() } else { lat.to_string() }} long={ if *long == "" { get_location.longitude.to_string() } else { long.to_string() } }/>
                         </>
                     }
                 } else {
