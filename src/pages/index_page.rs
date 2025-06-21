@@ -57,7 +57,7 @@ pub fn IndexPage() -> Html {
                 if let Some(location) = location_data {
                     html! {
                         <>
-                            <WeatherPage lat={ if *lat == "" { get_location.latitude.to_string() } else { lat.to_string() }} long={ if *long == "" { get_location.longitude.to_string() } else { long.to_string() } }/>
+                            <WeatherPage lat={ if lat.is_empty() { get_location.latitude.to_string() } else { lat.to_string() }} long={ if long.is_empty() { get_location.longitude.to_string() } else { long.to_string() } }/>
                         </>
                     }
                 } else {
